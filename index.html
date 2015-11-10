@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matreshka binders</title>
+	<meta charset="utf-8" />
+	<script type="text/javascript" src="https://raw.githubusercontent.com/matreshkajs/matreshka/master/matreshka.min.js"></script>
+	<script type="text/javascript" src="matreshka-binders.js"></script>
+</head>
+<body>
+<input type="text" mk-input>
+<span mk-text></span>
+<script type="text/javascript">
+var App = Class({
+	'extends': Matreshka,
+	constructor: function(){
+		//this.set('input','0');
+		this.bindNode('text','[mk-text]',MK.binders.htmlSwitch(['First','Second','Third']));
+		this.bindNode('input','[mk-input]',MK.binders.cssSwitch(['First','Second','Third']));
+
+	}
+});
+var app = new App;
+</script>
+</body>
+</html>

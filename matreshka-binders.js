@@ -30,7 +30,7 @@ if(b){
 			getValue: function(){
 				for (var i = this.classList.length - 1; i >= 0; i--) {
 					if(arr.indexOf(this.classList[i])){
-						return this._arr.indexOf(this.classList[i]);
+						return arr.indexOf(this.classList[i]);
 					}
 				};
 				return '-1';

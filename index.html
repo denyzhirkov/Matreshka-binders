@@ -7,7 +7,6 @@
 	<script type="text/javascript" src="matreshka-binders.js"></script>
 </head>
 <body>
-<input type="text" mk-input>
 <span mk-text></span>
 <script type="text/javascript">
 var App = Class({
@@ -15,7 +14,7 @@ var App = Class({
 	constructor: function(){
 		//this.set('input','0');
 		this.bindNode('text','[mk-text]',MK.binders.htmlSwitch(['First','Second','Third']));
-		this.bindNode('input','[mk-input]',MK.binders.cssSwitch(['First','Second','Third']));
+		this.bindNode('css','[mk-text]',MK.binders.cssSwitch(['First','Second','Third']));
 
 	}
 });

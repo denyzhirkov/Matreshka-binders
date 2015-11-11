@@ -23,7 +23,7 @@ if(b){
 		return {
 			setValue: function(v){
 				clear(this);
-				if(v!==undefined && v!='-1' && arr[v]){
+				if(v!==undefined && v!=-1 && arr[v]){
 					this.classList.add(arr[v]);
 				}
 			},
@@ -33,7 +33,7 @@ if(b){
 						return arr.indexOf(this.classList[i]);
 					}
 				};
-				return '-1';
+				return -1;
 			}
 		}
 	};

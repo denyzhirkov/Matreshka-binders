@@ -13,8 +13,28 @@ var App = Class({
 	'extends': Matreshka,
 	constructor: function(){
 
+		var cfg = [
+			{
+				min:5,
+				max:10,
+				f:function(o,v){
+					//o - Object node, v - Value
+					alert('The value is in range between 5 and 10');
+				}
+			},
+			{
+				min:11,
+				max:20,
+				f:function(o,v){
+					//o - Object node, v - Value
+					alert('The value is in range between 11 and 20');
+				}
+			}
+		];
+
 		this.bindNode('text','[mk-text]',MK.binders.htmlSwitch(['First','Second','Third']));
 		this.bindNode('css','[mk-text]',MK.binders.cssSwitch(['First','Second','Third']));
+		this.bindNode('num','[mk-text]',MK.binders.numRange(cfg));
 
 	}
 });

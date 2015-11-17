@@ -38,5 +38,20 @@ b.cssSwitch = function(arr){
 	}
 };
 
+//numRange([{min,max,f(this,value)},{min,max,f(this,value)}])
+b.numRange = function(c){
+	return {
+		setValue: function(v){
+			for (var i = c.length - 1; i >= 0; i--) {
+				if(v>=c[i].min && v<=c[i].max){
+					c[i].f(this,v);
+					break;
+				}
+			};
+			console.log('The value is out of ranges');
+		}
+	};
+};
+
 }
 }(MK.binders));

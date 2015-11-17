@@ -38,14 +38,14 @@ b.cssSwitch = function(arr){
 	}
 };
 
-//numRange([{min,max,f(this,value)},{min,max,f(this,value)}])
+//numRange([{min,max,f(value,this)},{min,max,f(value,this)}])
 b.numRange = function(c){
 	return {
 		setValue: function(v){
 			for (var i = c.length - 1; i >= 0; i--) {
 				if(v>=c[i].min && v<=c[i].max){
-					c[i].f(this,v);
-					break;
+					c[i].f(v,this);
+					return;
 				}
 			};
 			console.log('The value is out of ranges');

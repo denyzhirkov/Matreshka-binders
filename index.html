@@ -15,19 +15,19 @@ var App = Class({
 
 		var cfg = [
 			{
-				min:5,
-				max:10,
-				f:function(o,v){
-					//o - Object node, v - Value
-					alert('The value is in range between 5 and 10');
+				min: 5,
+				max: 10,
+				f: function(v,o){
+					//v - Value, o - Object node
+					alert('The value is in range between '+this.min+' and '+this.max);
 				}
 			},
 			{
-				min:11,
-				max:20,
-				f:function(o,v){
-					//o - Object node, v - Value
-					alert('The value is in range between 11 and 20');
+				min: 11,
+				max: 20,
+				f: function(v,o){
+					//v - Value, o - Object node
+					alert('The value is in range between '+this.min+' and '+this.max);
 				}
 			}
 		];

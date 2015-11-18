@@ -44,8 +44,7 @@ b.numRange = function(c){
 		setValue: function(v){
 			for (var i = c.length - 1; i >= 0; i--) {
 				if(v>=c[i].min && v<=c[i].max){
-					c[i].f(v,this);
-					return;
+					return c[i].f(v,this);
 				}
 			};
 			console.log('The value is out of ranges');

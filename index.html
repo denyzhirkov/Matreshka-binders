@@ -33,7 +33,7 @@ var App = Class({
 		];
 
 		this.bindNode('text','[mk-text]',MK.binders.htmlSwitch(['First','Second','Third']));
-		this.bindNode('css','[mk-text]',MK.binders.cssSwitch(['First','Second','Third']));
+		this.bindNode('css','[mk-text]',MK.binders.cssSwitch({'one':'ONE-ONE','two':'TWO-TWO',0:'ZERO'}));
 		this.bindNode('num','[mk-text]',MK.binders.numRange(cfg));
 
 	}

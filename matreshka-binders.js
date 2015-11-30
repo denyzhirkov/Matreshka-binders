@@ -9,18 +9,21 @@ if(b){
 
 //htmlSwitch(['first', 'second','third']) - Swithes between text values
 //htmlSwitch({'one':'super-text','two':'ultra-text'}) - Swithes between text
-b.htmlSwitch = function(arr){
+b.htmlSwitch = function(arr,dflt){
 	return {
 		setValue: function(v){
-			this.innerHTML = arr[v] || '';
+			this.innerHTML = arr[v] || dflt || '';
 		}
 	}
 };
 
 //cssSwitch(['first', 'second','third']) - Swithes between classes
 //cssSwitch({'one':'super-class','two':'ultra-class'}) - Swithes between classes
-b.cssSwitch = function(arr){	
+b.cssSwitch = function(arr,dflt){	
 	function clear(el){
+		if(dflt!==undefined){
+			el.classList.remove(dflt);
+		}
 		for(var i in arr){
 			el.classList.remove(arr[i]);
 		}
@@ -30,6 +33,8 @@ b.cssSwitch = function(arr){
 			clear(this);
 			if(v!==undefined && arr[v]){
 				this.classList.add(arr[v]);
+			}else if(dflt){
+				this.classList.add(dflt);
 			}
 		}
 	}

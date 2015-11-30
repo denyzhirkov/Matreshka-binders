@@ -1,14 +1,14 @@
 /*
 Matreshka.js custom binders
 created by denyzhirkov@yandex.ru @dolphin4ik
-v 1.1
+v 1.2
 */
 
 ;(function (b) {
 if(b){
 
-//htmlSwitch(['first', 'second','third']) - Swithes between text values
-//htmlSwitch({'one':'super-text','two':'ultra-text'}) - Swithes between text
+//htmlSwitch(['first', 'second','third'],default) - Swithes between text values
+//htmlSwitch({'one':'super-text','two':'ultra-text'},default) - Swithes between text
 b.htmlSwitch = function(arr,dflt){
 	return {
 		setValue: function(v){
@@ -17,8 +17,8 @@ b.htmlSwitch = function(arr,dflt){
 	}
 };
 
-//cssSwitch(['first', 'second','third']) - Swithes between classes
-//cssSwitch({'one':'super-class','two':'ultra-class'}) - Swithes between classes
+//cssSwitch(['first', 'second','third'],default) - Swithes between classes
+//cssSwitch({'one':'super-class','two':'ultra-class'},default) - Swithes between classes
 b.cssSwitch = function(arr,dflt){	
 	function clear(el){
 		if(dflt!==undefined){

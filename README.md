@@ -33,4 +33,12 @@ Just set up an array, each element is an object with *min*, *max* values and *f*
 
 ```javascript
 MK.binders.numRange([{min,max,f(value,oject)},{min,max,f(value,object)}])
+
+this.bindNode('a','.some-object',[
+  {min:1,max:10,f:function(v,o){alert(v+' between 1 and 10');}},
+  {min:50,max:100,f:function(v,o){alert(v+' between 50 and 100');}}
+  ]
+);
+
+this.a = 67; //The handler alerts "67 between 50 and 100";
 ```

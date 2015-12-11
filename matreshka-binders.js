@@ -1,7 +1,7 @@
 /*
 Matreshka.js custom binders
 created by denyzhirkov@yandex.ru @dolphin4ik
-v 1.2
+v 1.3
 */
 
 ;(function (b) {
@@ -35,6 +35,20 @@ b.cssSwitch = function(arr,dflt){
 				this.classList.add(arr[v]);
 			}else if(dflt){
 				this.classList.add(dflt);
+			}
+		}
+	}
+};
+
+//attrSwitch('attr',['first', 'second','third'],default) - Swithes between attr values
+//attrSwitch('attr',{'one':'value1','two':'value2'},default) - Swithes between attr values
+b.attrSwitch = function(attr,arr,dflt){	
+	return {
+		setValue: function(v){
+			if(arr[v] || dflt){
+				this.setAttribute(attr, arr[v] || dflt);
+			}else{
+				this.removeAttribute(attr);
 			}
 		}
 	}

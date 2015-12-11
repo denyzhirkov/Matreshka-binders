@@ -28,6 +28,15 @@ or
 MK.binders.htmlSwitch({'a':'About text','b':'Before read'},'default-text');
 ```
 
+**attrSwitch** - makes the same as *htmlSwitch* but with *attribute* of object. Use array or object as config
+```javascript
+MK.binders.attrSwitch('attribute',['value1','value2','value3'],'default value');
+
+or
+
+MK.binders.attrSwitch('attribute',{'a':'value1','b':'value2'},'default value');
+```
+
 **numRange** - a magic binder which performs a handler function if the value is in range.
 Just set up an array, each element is an object with *min*, *max* values and *f* - handler function. In handler u can use *value* - triggered value and *object* - DOM Node object;
 

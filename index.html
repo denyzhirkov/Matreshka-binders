@@ -32,9 +32,18 @@ var App = Class({
 			}
 		];
 
+		var attr = {
+			'one':'super title',
+			2:'ultra title'
+		};
+
 		this.bindNode('text','[mk-text]',MK.binders.htmlSwitch(['First','Second','Third'],'default'));
+
 		this.bindNode('css','[mk-text]',MK.binders.cssSwitch({'one':'ONE-ONE','two':'TWO-TWO',0:'ZERO'},'class-default'));
+
 		this.bindNode('num','[mk-text]',MK.binders.numRange(cfg));
+
+		this.bindNode('attr','[mk-text]',MK.binders.attrSwitch('title',attr));
 
 	}
 });
